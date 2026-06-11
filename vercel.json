@@ -3,7 +3,8 @@
     "frontend": {
       "root": "frontend",
       "routePrefix": "/",
-      "framework": "angular"
+      "framework": "angular",
+      "outputDirectory": "dist/geo-apoyo-angular/browser"
     },
     "backend": {
       "root": "backend",
