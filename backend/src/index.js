@@ -69,7 +69,6 @@ function apiStatus(req, res) {
   });
 }
 
-app.get("/", apiStatus);
 app.get("/api", apiStatus);
 
 app.get(["/api-docs.json", "/api/api-docs.json"], (req, res) => {
@@ -89,6 +88,10 @@ routerApi(app);
 
 const frontendDist = path.join(__dirname, "../../frontend/dist/geo-apoyo-angular/browser");
 app.use(express.static(frontendDist));
+
+app.get(/^\/(?!api(?:\/|$)|api-docs(?:\/|$)).*/, (req, res) => {
+  res.sendFile(path.join(frontendDist, "index.html"));
+});
 
 app.use(notFound);
 app.use(errorHandler);
