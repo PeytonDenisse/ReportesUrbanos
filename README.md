@@ -73,3 +73,4 @@ npm run start --prefix backend
 ```
 
 El backend sirve el build de Angular desde `frontend/dist/geo-apoyo-angular/browser`.
+ 
